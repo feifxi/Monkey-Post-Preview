@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- Header & Navbar -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="img/monkeypost_logo.jpg" alt="">
+                <h2>Monkey</h2>
+            </a>
+            <input type="checkbox" id="active-sidebar">
+            <label for="active-sidebar" id="sidebar-overlay"></label>
+            <label for="active-sidebar" class="open-sidebar-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"> <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
+            </label>
+            <!-- Not loggedin -->
+            <div class="links-container not-logged-in">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <label for="active-sidebar" class="close-sidebar-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>
+                </label>
+            </div>
+            <!-- Logged in -->
+            <div class="links-container logged-in">
+                <form>
+                    <button type="button" onclick="logout()">Logout</button>
+                </form>
+                <label class="create-post-btn" for="active-post-pop-up">Create Post</label>
+                <a href="profile.html" class="profile-btn">
+                    <span class="profile-name">Chanombude</span>
+                    <img src="https://www.pennlive.com/resizer/2s9yGlOJZ434P62jhjJw9ngtS8w=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.pennlive.com/home/penn-media/width2048/img/nation-world/photo/monkeyjpg-f0a30582aef21f0b.jpg" alt="" class="profile-img">
+                </a>
+                <label for="active-sidebar" class="close-sidebar-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Post Section -->
+    <section class="post-section">
+        <!-- Owner Profile -->
+        <div class="profile-section">
+            <img src="https://www.pennlive.com/resizer/2s9yGlOJZ434P62jhjJw9ngtS8w=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.pennlive.com/home/penn-media/width2048/img/nation-world/photo/monkeyjpg-f0a30582aef21f0b.jpg" alt="" class="owner-profile-img">
+            <span class="owner-username">Chanombude</span>
+            <!-- Edit profile btn -->
+            <label for="active-profile-pop-up" class="profile-update-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" /></svg>
+            </label>
+        </div>
+
+        <!-- Post -->
+        <div class="post"> 
+            <div class="post-profile">
+                <a href="profile.html"><img src="https://www.pennlive.com/resizer/2s9yGlOJZ434P62jhjJw9ngtS8w=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.pennlive.com/home/penn-media/width2048/img/nation-world/photo/monkeyjpg-f0a30582aef21f0b.jpg"></a>
+                <a href="profile.html">Chanombude</a>
+                
+                <!-- Edit post btn -->
+                <div class="post-edit-btn-container">
+                    <label class="post-update-btn" for="active-post-pop-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" /></svg>
+                    </label>
+                    <form class="post-delete-btn">
+                        <button type="submit" class="post-delete-btn" ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="post-content">
+                <div class="text" dataof="1">
+                    Welcome Monkey To Our Paradise!!
+                </div>
+                <img dataof="1" src="https://i.kym-cdn.com/entries/icons/original/000/044/738/monkeyrizz.jpg" alt="">
+            </div>
+            <div class="post-like">
+                <div class="post-like-status">
+                    <span class="like-status">
+                        <img src="img/banana-icon.png" alt="">
+                        <span>1</span>
+                    </span>
+                    <span class="notlike-status">
+                        <img src="img/poop-icon.png" alt="">
+                        <span>101</span>
+                    </span>
+                </div>
+                <div class="btn-container">
+                    <form>
+                        <button type="submit">
+                            <img src="img/banana-icon.png" alt="">
+                            Give Banana
+                        </button>
+                    </form>
+                    <form>
+                        <button type="submit">
+                            <img src="img/poop-icon.png" alt="">
+                            Throw Poo
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="post"> 
+            <div class="post-profile">
+                <a href="profile.html"><img src="https://www.pennlive.com/resizer/2s9yGlOJZ434P62jhjJw9ngtS8w=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.pennlive.com/home/penn-media/width2048/img/nation-world/photo/monkeyjpg-f0a30582aef21f0b.jpg"></a>
+                <a href="profile.html">Chanombude</a>
+                
+                <!-- Edit post btn -->
+                <div class="post-edit-btn-container">
+                    <label class="post-update-btn" for="active-post-pop-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" /></svg>
+                    </label>
+                    <form class="post-delete-btn">
+                        <button type="submit" class="post-delete-btn" ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="post-content">
+                <div class="text" dataof="1">
+                    Compro is fun
+                </div>
+                <img dataof="1" src="img/comproisfun.jpg" alt="">
+            </div>
+            <div class="post-like">
+                <div class="post-like-status">
+                    <span class="like-status">
+                        <img src="img/banana-icon.png" alt="">
+                        <span>205</span>
+                    </span>
+                    <span class="notlike-status">
+                        <img src="img/poop-icon.png" alt="">
+                        <span>10</span>
+                    </span>
+                </div>
+                <div class="btn-container">
+                    <form>
+                        <button type="submit">
+                            <img src="img/banana-icon.png" alt="">
+                            Give Banana
+                        </button>
+                    </form>
+                    <form>
+                        <button type="submit">
+                            <img src="img/poop-icon.png" alt="">
+                            Throw Poo
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Edit profile pop-up -->
+    <input type="checkbox" id="active-profile-pop-up">
+    <div class="profile-pop-up">
+        <div class="profile-pop-up-container">
+            <label for="active-profile-pop-up" class="close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>
+            </label>
+
+            <div class="pop-up-title">
+                <h1>Edit Profile</h1>
+            </div>
+            <form class="pop-up-content" autocomplete="off">
+                <img src="https://www.pennlive.com/resizer/2s9yGlOJZ434P62jhjJw9ngtS8w=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.pennlive.com/home/penn-media/width2048/img/nation-world/photo/monkeyjpg-f0a30582aef21f0b.jpg" alt="">
+                <input type="text" name="profile" id="profile-update-url" placeholder="Insert image URL here..." required  value="https://www.pennlive.com/resizer/2s9yGlOJZ434P62jhjJw9ngtS8w=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.pennlive.com/home/penn-media/width2048/img/nation-world/photo/monkeyjpg-f0a30582aef21f0b.jpg">
+                <div class="btn-container">
+                    <button type="submit">Edit Profile</button>
+                    <button type="button" id="setdefault-profile-btn">Use Default Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Post pop-up -->
+    <input type="checkbox" id="active-post-pop-up">
+    <div class="post-pop-up">
+        <div class="post-pop-up-container">
+            <label for="active-post-pop-up" class="close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg>
+            </label>
+            
+            <div class="pop-up-title">
+                <h1>Title101</h1>
+            </div>
+            <form class="pop-up-content" autocomplete="off">
+                <h3>Post Image</h3>
+                <input type="text" name="img" placeholder="Insert image URL here..." required>
+                <h3>Post Content</h3>
+                <textarea name="content"  placeholder="Enter your post content here..." required></textarea>
+                <div class="btn-container"> 
+                    <button type="button" id="post-pop-up-btn">Button101</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/preview.js"></script>
+</body>
+
+</html>
